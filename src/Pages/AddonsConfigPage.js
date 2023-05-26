@@ -328,7 +328,7 @@ const schema = yup.object().shape({
 	tiltRightAnalogDownPin: yup.number().label('Tilt Right Analog Down Pin').validatePinWhenEnabled('TiltEnabled'),
 	tiltRightAnalogLeftPin: yup.number().label('Tilt Right Analog Left Pin').validatePinWhenEnabled('TiltEnabled'),
 	tiltRightAnalogRightPin: yup.number().label('Tilt Right Analog Right Pin').validatePinWhenEnabled('TiltEnabled'),
-	tiltSOCDMode: yup.number().required().oneOf(TILT_SOCD_MODES.map(o => o.value)).label('Tilt SOCE Mode'),
+	//tiltSOCDMode: yup.number().required().oneOf(TILT_SOCD_MODES.map(o => o.value)).label('Tilt SOCE Mode'),
 	tiltSOCDMode: yup.number().label('Tilt SOCE Mode').validateSelectionWhenEnabled('TiltEnabled', SOCD_MODES),
 
 	ExtraButtonAddonEnabled:     yup.number().required().label('Extra Button Add-On Enabled'),
@@ -1355,7 +1355,7 @@ export default function AddonsConfigPage() {
 									name="tilt1Pin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tilt1Pin}
+									value={values.tilt1Pin || -1}
 									error={errors.tilt1Pin}
 									isInvalid={errors.tilt1Pin}
 									onChange={handleChange}
@@ -1367,7 +1367,7 @@ export default function AddonsConfigPage() {
 									name="tilt2Pin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tilt2Pin}
+									value={values.tilt2Pin || -1}
 									error={errors.tilt2Pin}
 									isInvalid={errors.tilt2Pin}		
 									onChange={handleChange}
@@ -1379,7 +1379,7 @@ export default function AddonsConfigPage() {
 									name="tiltFunctionPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltFunctionPin}
+									value={values.tiltFunctionPin || -1}
 									error={errors.tiltFunctionPin}
 									isInvalid={errors.tiltFunctionPin}
 									onChange={handleChange}
@@ -1393,7 +1393,7 @@ export default function AddonsConfigPage() {
 									name="tiltLeftAnalogUpPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltLeftAnalogUpPin}
+									value={values.tiltLeftAnalogUpPin || -1}
 									error={errors.tiltLeftAnalogUpPin}
 									isInvalid={errors.tiltLeftAnalogUpPin}
 									onChange={handleChange}
@@ -1405,7 +1405,7 @@ export default function AddonsConfigPage() {
 									name="tiltLeftAnalogDownPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltLeftAnalogDownPin}
+									value={values.tiltLeftAnalogDownPin || -1}
 									error={errors.tiltLeftAnalogDownPin}
 									isInvalid={errors.tiltLeftAnalogDownPin}
 									onChange={handleChange}
@@ -1417,7 +1417,7 @@ export default function AddonsConfigPage() {
 									name="tiltLeftAnalogLeftPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltLeftAnalogLeftPin}
+									value={values.tiltLeftAnalogLeftPin || -1}
 									error={errors.tiltLeftAnalogLeftPin}
 									isInvalid={errors.tiltLeftAnalogLeftPin}
 									onChange={handleChange}
@@ -1429,7 +1429,7 @@ export default function AddonsConfigPage() {
 									name="tiltLeftAnalogRightPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltLeftAnalogRightPin}
+									value={values.tiltLeftAnalogRightPin || -1}
 									error={errors.tiltLeftAnalogRightPin}
 									isInvalid={errors.tiltLeftAnalogRightPin}
 									onChange={handleChange}
@@ -1444,7 +1444,7 @@ export default function AddonsConfigPage() {
 									name="tiltRightAnalogUpPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltRightAnalogUpPin}
+									value={values.tiltRightAnalogUpPin || -1}
 									error={errors.tiltRightAnalogUpPin}
 									isInvalid={errors.tiltRightAnalogUpPin}
 									onChange={handleChange}
@@ -1456,7 +1456,7 @@ export default function AddonsConfigPage() {
 									name="tiltRightAnalogDownPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltRightAnalogDownPin}
+									value={values.tiltRightAnalogDownPin || -1}
 									error={errors.tiltRightAnalogDownPin}
 									isInvalid={errors.tiltRightAnalogDownPin}
 									onChange={handleChange}
@@ -1468,7 +1468,7 @@ export default function AddonsConfigPage() {
 									name="tiltRightAnalogLeftPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltRightAnalogLeftPin}
+									value={values.tiltRightAnalogLeftPin || -1}
 									error={errors.tiltRightAnalogLeftPin}
 									isInvalid={errors.tiltRightAnalogLeftPin}
 									onChange={handleChange}
@@ -1480,7 +1480,7 @@ export default function AddonsConfigPage() {
 									name="tiltRightAnalogRightPin"
 									className="form-select-sm"
 									groupClassName="col-sm-3 mb-3"
-									value={values.tiltRightAnalogRightPin}
+									value={values.tiltRightAnalogRightPin || -1}
 									error={errors.tiltRightAnalogRightPin}
 									isInvalid={errors.tiltRightAnalogRightPin}
 									onChange={handleChange}
